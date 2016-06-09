@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="200dp">
+
+    <ImageView
+        android:id="@+id/des_city_image_iv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/public_green"
+        android:scaleType="fitXY"/>
+
+
+    <TextView
+        android:id="@+id/des_city_image_en_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="20dp"
+        android:text="HongKong"
+        android:textColor="@android:color/white"
+        android:textSize="20dp"/>
+
+    <TextView
+        android:id="@+id/des_city_image_ch_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/des_city_image_en_tv"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="20dp"
+        android:text="香港"
+        android:textColor="@android:color/white"
+        android:textSize="30dp"/>
+
+</RelativeLayout>

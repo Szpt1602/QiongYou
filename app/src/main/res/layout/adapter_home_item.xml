@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="220dp"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp"
+        android:background="@drawable/selector_bg_click_cover">
+
+        <ImageView
+            android:id="@+id/adapter_home_iv"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:scaleType="centerCrop"/>
+
+        <TextView
+            android:id="@+id/adapter_home_tv_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/adapter_home_iv"
+            android:layout_marginTop="7dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:padding="2dp"
+            android:textSize="15sp"/>
+
+        <TextView
+            android:id="@+id/adapter_home_tv_sell"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/adapter_home_tv_content"
+            android:padding="2dp"
+            android:textColor="@color/hint_black"
+            android:textSize="12sp"/>
+
+        <TextView
+            android:id="@+id/adapter_home_price"
+            android:layout_width="wrap_content"
+            android:padding="2dp"
+            android:layout_alignBottom="@+id/adapter_home_tv_sell"
+            android:layout_alignParentRight="true"
+            android:layout_height="wrap_content"
+            android:textColor="@color/hint_black"
+            android:textSize="12sp"/>
+
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/adapter_home_sale_tag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="6.5dp"
+        android:visibility="gone"
+        android:background="@drawable/bg_sale_tag"
+        android:textColor="@color/public_white"
+        android:textSize="12sp"/>
+
+    <ImageView
+        android:layout_width="12dp"
+        android:id="@+id/adapter_home_right_tag_iv"
+        android:drawablePadding="5dp"
+        android:layout_marginLeft="3dp"
+        android:layout_alignLeft="@+id/adapter_home_right_tag"
+        android:layout_marginTop="26.5dp"
+        android:layout_marginRight="15dp"
+        android:layout_height="12dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/adapter_home_right_tag"
+        android:drawablePadding="2dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="21dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/home_hint_tips_bg_shape"
+        android:textColor="@color/public_white"
+        android:textSize="12sp"/>
+
+</RelativeLayout>

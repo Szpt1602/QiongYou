@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="ViewPagerIndex">
+
+        <attr name="pointCount" format="integer"/>
+        <attr name="selectColor" format="color"/>
+        <attr name="pointWidth" format="float"/>
+        <attr name="pointPadding" format="dimension"/>
+    </declare-styleable>
+
+</resources>

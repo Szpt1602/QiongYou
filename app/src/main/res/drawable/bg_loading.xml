@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="false">
+
+    <item android:drawable="@drawable/bg_loading_200_1" android:duration="100"/>
+    <item android:drawable="@drawable/bg_loading_200_2" android:duration="100"/>
+    <item android:drawable="@drawable/bg_loading_200_3" android:duration="100"/>
+    <item android:drawable="@drawable/bg_loading_200_4" android:duration="100"/>
+    <item android:drawable="@drawable/bg_loading_200_5" android:duration="100"/>
+    <item android:drawable="@drawable/bg_loading_200_5" android:duration="100"/>
+    <item android:drawable="@drawable/bg_loading_200_6" android:duration="100"/>
+    <item android:drawable="@drawable/bg_loading_200_7" android:duration="100"/>
+    <item android:drawable="@drawable/bg_loading_200_8" android:duration="100"/>
+    <item android:drawable="@drawable/bg_loading_200_9" android:duration="100"/>
+    <item android:drawable="@drawable/bg_loading_200_10" android:duration="100"/>
+    <item android:drawable="@drawable/bg_loading_200_11" android:duration="100"/>
+    <item android:drawable="@drawable/bg_loading_200_12" android:duration="100"/>
+    <item android:drawable="@drawable/bg_loading_200_13" android:duration="100"/>
+    <item android:drawable="@drawable/bg_loading_200_14" android:duration="100"/>
+    <item android:drawable="@drawable/bg_loading_200_15" android:duration="100"/>
+    <item android:drawable="@drawable/bg_loading_200_16" android:duration="100"/>
+    <item android:drawable="@drawable/bg_loading_200_17" android:duration="100"/>
+    <item android:drawable="@drawable/bg_loading_200_18" android:duration="100"/>
+    <item android:drawable="@drawable/bg_loading_200_19" android:duration="100"/>
+
+</animation-list>

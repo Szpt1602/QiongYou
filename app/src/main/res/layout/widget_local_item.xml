@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+                android:padding="10dp"
+              android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/local_item_iv"
+        android:layout_width="110dp"
+        android:scaleType="fitXY"
+        android:background="@color/public_tint_gray"
+        android:layout_height="90dp"/>
+
+    <LinearLayout
+        android:id="@+id/local_item_top_ll"
+        android:orientation="horizontal"
+        android:layout_marginLeft="20dp"
+        android:layout_toRightOf="@id/local_item_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="交通"
+            android:id="@+id/local_item_content"
+            android:textColor="@color/public_green"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <View
+            android:layout_width="2dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/public_tint_gray"
+            android:layout_height="12dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:id="@+id/local_item_city"
+            android:text="日本"
+            android:drawablePadding="3dp"
+            android:drawableLeft="@drawable/ic_poi_green"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:maxLines="2"
+        android:id="@+id/local_item_title"
+        android:textSize="15sp"
+        android:text="全日本JR全日本JR全日本JR全日本JR全日本JR全日本JR全日本JR全日本JR全日本JR"
+        android:ellipsize="end"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/local_item_top_ll"
+        android:layout_toRightOf="@id/local_item_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/local_item_number"
+        android:text="10000件已售"
+        android:layout_toRightOf="@id/local_item_iv"
+        android:layout_marginLeft="20dp"
+        android:layout_alignBottom="@id/local_item_iv"
+        android:textColor="@color/public_gray"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/local_other_tv"
+        android:layout_alignParentRight="true"
+        android:layout_alignBottom="@id/local_item_iv"
+        android:textColor="@color/public_gray"
+        android:text="元起"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:textSize="23sp"
+        android:text="228"
+        android:textColor="@color/local_red"
+        android:layout_toLeftOf="@id/local_other_tv"
+        android:layout_alignBottom="@id/local_other_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/local_item_price"/>
+</RelativeLayout>

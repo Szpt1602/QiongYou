@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_my_head_layout"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/login_activity_login_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:text="@string/login_activity_login"
+            android:textColor="#fff"
+            android:textSize="20sp"/>
+
+        <ImageView
+            android:id="@+id/login_activity_out"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/ic_login_close"/>
+
+        <TextView
+            android:id="@+id/login_activity_register"
+            android:layout_width="50dp"
+            android:layout_height="25dp"
+            android:background="@drawable/login_activity_register"
+            android:gravity="center"
+            android:text="注册"
+            android:textColor="#Fff"
+            android:layout_alignBottom="@+id/login_activity_login_tv"
+            android:layout_alignRight="@+id/login_activity_rg"
+            android:layout_alignEnd="@+id/login_activity_rg"/>
+        <RadioGroup
+            android:id="@+id/login_activity_rg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/login_activity_login_tv"
+            android:layout_toRightOf="@id/login_activity_out"
+            android:layout_marginRight="20dp"
+            android:orientation="horizontal">
+        <RadioButton
+            android:id="@+id/login_activity_btn1"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:button="@null"
+            android:checked="true"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/login_activity_btn_selector"
+            android:text="账户登录"
+            android:textColor="#2F926C"
+            android:textSize="20sp"/>
+
+        <RadioButton
+            android:id="@+id/login_activity_btn2"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_height="40dp"
+            android:button="@null"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/login_activity_btn2_selctor"
+            android:layout_toRightOf="@id/login_activity_btn1"
+            android:text="短信验证码登录"
+            android:textColor="#2F926C"
+            android:textSize="20sp"/>
+        </RadioGroup>
+        <android.support.v4.view.ViewPager
+            android:id="@+id/activity_login_vp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/login_activity_rg"/>
+    </RelativeLayout>
+</LinearLayout>

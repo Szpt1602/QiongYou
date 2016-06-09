@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.SwipeRefreshLayout
+    android:id="@+id/home_srl"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.white.other.widget.MyScrollView
+        android:id="@+id/home_sv_root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/home_root"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="180dp">
+
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/home_top_banner_vp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+                <com.white.other.widget.ViewPagerIndex
+                    android:id="@+id/home_top_vp_index1"
+                    android:layout_width="100dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    app:pointPadding="15dp"
+                    app:selectColor="@color/public_white"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="180dp">
+
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/home_bar_root_vp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+                <com.white.other.widget.ViewPagerIndex
+                    android:id="@+id/home_top_vp_index2"
+                    android:layout_width="100dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    app:pointPadding="10dp"
+                    app:selectColor="@color/public_tint_gray"/>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/home_promo_root"
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:layout_marginBottom="15dp"
+                android:layout_marginTop="15dp"
+                android:orientation="vertical"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:background="@color/public_white"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="@string/home_gear"
+                    android:textSize="16sp"/>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/home_gear_rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"/>
+
+            </LinearLayout>
+
+            <com.white.home.widget.HotTopicLayout
+                android:id="@+id/home_top_topic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@color/public_white"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@color/public_white"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="@string/home_guess"
+                    android:textSize="16sp"/>
+
+                <com.white.other.widget.ListViewForScrollView
+                    android:id="@+id/home_choiceness_lv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:background="@color/public_white"
+                    android:divider="@null"/>
+
+
+                <ImageView
+                    android:id="@+id/home_query_more"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginTop="15dp"
+                    android:clickable="true"
+                    android:src="@drawable/ic_query_more"
+                    android:visibility="gone"/>
+
+            </LinearLayout>
+
+            <com.white.other.widget.LoadingMore
+                android:id="@+id/home_bottom_lm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+    </com.white.other.widget.MyScrollView>
+
+</android.support.v4.widget.SwipeRefreshLayout>

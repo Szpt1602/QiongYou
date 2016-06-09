@@ -1,0 +1,46 @@
+<resources>
+    <string name="app_name">穷游</string>
+
+    <!--HomeFragment-->
+    <string name="home_homepage">首页</string>
+    <string name="home_des">目的地</string>
+    <string name="home_loc_play">当地玩乐</string>
+    <string name="home_my">我的</string>
+    <string name="search_home_hint">搜索目的地/折扣/关键字</string>
+    <string name="home_hot_topic_title">当季热门</string>
+    <string name="home_guess">猜你喜欢</string>
+    <string name="home_loading_more">正在加载...</string>
+
+    <!-- DesFragment -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="des_deit">搜索国家/城市</string>
+
+    <!--MyFragment-->
+    <string name="fragment_my_login">点击登录,体验更多</string>
+    <string name="fragment_my_info">个人信息管理等</string>
+    <string name="fragment_my_subscribe">我的订阅</string>
+    <string name="fragment_my_collet">我的收藏</string>
+    <string name="fragment_my_consult">我的咨询</string>
+    <string name="fragment_my_order">我的订单</string>
+    <string name="fragment_my_all_order">全部订单</string>
+    <string name="fragment_my_pay">待付款</string>
+    <string name="fragment_my_drawback">退款/售后</string>
+    <string name="fragment_my_youhuijuan">我的优惠券</string>
+    <string name="fragment_my_suggest">常见问题与意见反馈</string>
+    <string name="fragment_my_setting">更多设置</string>
+    <string name="login_activity_login">登录</string>
+    <string name="login_activity_mail">输入邮箱/用户名</string>
+    <string name="login_activity_mima">输入密码</string>
+    <string name="login_activity_phone_login">手机号登录</string>
+    <string name="login_activity_three_login">第三方登录</string>
+    <string name="login_activity_write_phone">填写你的手机号</string>
+    <string name="login_activity_send_yanzhenma">发送验证码</string>
+    <string name="guide_activity_go">立即出发</string>
+
+    <!--LocalFragment-->
+    <string name="local_selector_city">选择城市</string>
+    <string name="local_practical_must">实用必备</string>
+    <string name="local_hot">热卖商品</string>
+    <string name="local_city_hot">城市深度游</string>
+    <string name="home_gear">出行必备</string>
+</resources>

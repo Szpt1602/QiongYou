@@ -1,0 +1,58 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/blackDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="home_rb">
+        <item name="android:width">0dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/home_rb_text_selector</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:button">@null</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="single_line_divider">
+        <item name="android:background">@color/public_tint_gray</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">1.0px</item>
+    </style>
+
+    <style name="btn_press_bg">
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:clickable">true</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:background">@drawable/title_btn_bg_selector</item>
+    </style>
+
+    <style name="des_btn">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:textColor">@color/home_rb_text_selector</item>
+        <item name="android:gravity">center</item>
+        <item name="android:button">@null</item>
+        <item name="android:layout_marginBottom">1dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:background">@color/public_white</item>
+        <item name="android:textSize">18dp</item>
+    </style>
+
+    <!--一条灰色横线-->
+    <style name="fragment_my_transverse_line">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">2dp</item>
+        <item name="android:background">#DFDFE0</item>
+    </style>
+    <!--一条白色横线-->
+    <style name="login_activity_while_line">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">#FFF</item>
+    </style>
+
+</resources>

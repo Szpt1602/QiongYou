@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+                android:background="@drawable/bg_my_head_layout"
+              android:layout_height="match_parent">
+<ImageView
+    android:id="@+id/register_activity_back"
+    android:layout_width="30dp"
+    android:layout_height="30dp"
+    android:layout_marginTop="20dp"
+    android:layout_marginLeft="20dp"
+    android:background="@drawable/ic_back"/>
+    <TextView
+        android:id="@+id/register_activity_zhuce_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:text="注册"
+        android:textColor="#fff"
+        android:textSize="20sp"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"/>
+    <TextView
+        android:id="@+id/register_activity_phone_zhuce_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textColor="#Fff"
+        android:layout_below="@id/register_activity_zhuce_tv"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:text="手机号注册"/>
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_below="@id/register_activity_phone_zhuce_tv"
+            android:background="@drawable/ic_arrow_white"/>
+</RelativeLayout>

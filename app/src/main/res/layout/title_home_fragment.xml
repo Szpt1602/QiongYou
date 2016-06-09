@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="match_parent"
+             android:layout_height="50dp">
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/shape_gradient_black"/>
+
+    <FrameLayout
+        android:id="@+id/title_home_green"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0"
+        android:background="@drawable/bg_green_change"/>
+
+    <RelativeLayout
+        android:id="@+id/rlTitleLayout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <ImageView
+            android:id="@+id/ic_left_image"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/selector_bg_click_cover"
+            android:clickable="true"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_qrcode"/>
+
+        <ImageView
+            android:id="@+id/ic_right_image"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/selector_bg_click_cover"
+            android:clickable="true"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_newmessage_selector"/>
+
+        <RelativeLayout
+            android:id="@+id/ll_search"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_centerInParent="true"
+            android:layout_toLeftOf="@+id/ic_right_image"
+            android:layout_toRightOf="@+id/ic_left_image">
+
+            <ImageView
+                android:id="@+id/ivSearch"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/bg_home_title_search"/>
+
+            <TextView
+                android:id="@+id/home_title_tv_hint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:clickable="false"
+                android:drawableLeft="@drawable/ic_search_2"
+                android:drawablePadding="5.0dip"
+                android:focusable="false"
+                android:text="@string/search_home_hint"
+                android:textColor="@color/text_white"
+                android:textSize="14.0dip"/>
+
+        </RelativeLayout>
+    </RelativeLayout>
+</FrameLayout>
