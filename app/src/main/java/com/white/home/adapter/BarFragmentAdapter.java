@@ -16,7 +16,7 @@ public class BarFragmentAdapter extends FragmentPagerAdapter {
 
     private final List<HomeDetail> list;
     private final int count;
-
+//.
     public BarFragmentAdapter(FragmentManager fm, List<HomeDetail> list) {
         super(fm);
         this.list = list;
