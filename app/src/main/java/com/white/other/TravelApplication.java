@@ -13,6 +13,5 @@ public class TravelApplication extends Application {
 
 
 
-
     }
 }
