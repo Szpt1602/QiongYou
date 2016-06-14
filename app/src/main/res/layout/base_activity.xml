@@ -20,8 +20,7 @@
             android:id="@+id/base_ic_left"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:background="@drawable/title_btn_bg_selector"
-            android:clickable="true"/>
+            android:background="@drawable/title_btn_bg_selector"/>
 
         <TextView
             android:layout_width="0dp"
@@ -36,8 +35,7 @@
             android:id="@+id/base_ic_right"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:background="@drawable/title_btn_bg_selector"
-            android:clickable="true"/>
+            android:background="@drawable/title_btn_bg_selector"/>
 
     </LinearLayout>
 
