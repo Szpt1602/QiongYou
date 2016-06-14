@@ -29,14 +29,8 @@ public class CityAdapter extends RecyclerView.Adapter<CityAdapter.RecyclerViewHo
     private Context mContext;
     private LayoutInflater inflater;
     private List<DesCity> list;
-    private int id;
-    private RecAdapter.IMyIdCallback mCallback;
     private int cId = 1955;
 
-    public void setList(List<DesCity> list) {
-        this.list = list;
-        id = 0;
-    }
 
     public CityAdapter(Context context, List<DesCity> list) {
         this.mContext = context;
@@ -50,15 +44,7 @@ public class CityAdapter extends RecyclerView.Adapter<CityAdapter.RecyclerViewHo
 //        View view = inflater.inflate(R.layout.widget_des_item, null);
         View itemView = LayoutInflater.from(parent.getContext()).
                 inflate(R.layout.widget_des_item, parent, false);
-        return new RecyclerViewHolder(itemView, new IMyViewHolderClicks() {
-
-            @Override
-            public void onItemClick(String uid) {
-                // 跳转到当地信息页，根据uid获取旅游信息
-                LogUtil.e("点击事件测试！！  ==== onItemClick");
-
-            }
-        });
+        return new RecyclerViewHolder(itemView);
     }
 
     @Override
@@ -67,7 +53,7 @@ public class CityAdapter extends RecyclerView.Adapter<CityAdapter.RecyclerViewHo
         ImageLoader.getInstance().displayImage(desCity.getPic(), holder.iv, ImageUtil.getNormalImageOptions());
         holder.tv_ch.setText(desCity.getName());
         holder.tv_en.setText(desCity.getName_en());
-        holder.relativeContainer.setId(id++);
+        holder.relativeContainer.setId(position);
     }
 
     @Override
@@ -78,21 +64,21 @@ public class CityAdapter extends RecyclerView.Adapter<CityAdapter.RecyclerViewHo
 
     class RecyclerViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        IMyViewHolderClicks mListener;
         RelativeLayout relativeContainer;
         ImageView iv;
         TextView tv_ch, tv_en;
 
-        public RecyclerViewHolder(View itemView, IMyViewHolderClicks listener) {
+        public RecyclerViewHolder(View itemView) {
             super(itemView);
             relativeContainer = (RelativeLayout) itemView.findViewById(R.id.des_item_rootrl);
             iv = (ImageView) itemView.findViewById(R.id.des_item_iv);
             tv_ch = (TextView) itemView.findViewById(R.id.des_item_ch_tv);
             tv_en = (TextView) itemView.findViewById(R.id.des_item_en_tv);
-            mListener = listener;
             relativeContainer.setOnClickListener(this);
         }
 
+
+        //设置cityid  便利循环拿到点击的cityid 传入URL
         @Override
         public void onClick(View v) {
             LogUtil.e("点击事件测试！！！" + v.getId());
@@ -107,22 +93,14 @@ public class CityAdapter extends RecyclerView.Adapter<CityAdapter.RecyclerViewHo
                 coun_Id = coun_Id + cId + v.getId();
                 country_id = coun_Id + "";
             }
-            String url = City.getUUL(country_id, city_id);
+            String url = City.getURL(country_id, city_id);
+
+            LogUtil.d(" City.getURL == " + url);
 
             Intent intent = new Intent(activity, Des_City_Activity.class);
             intent.putExtra("city", url);
+            intent.putExtra("cityId", city_id);
             activity.startActivity(intent);
         }
-    }
-
-    /**
-     * item接口
-     */
-    private interface IMyViewHolderClicks {
-
-        //单击整个item跳转到用户界面，需要传递uid
-        void onItemClick(String uid);
-
-
     }
 }

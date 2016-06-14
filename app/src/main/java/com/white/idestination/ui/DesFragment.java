@@ -1,13 +1,12 @@
 package com.white.idestination.ui;
 
-import android.os.Handler;
-import android.os.Message;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.white.R;
 import com.white.idestination.adapter.CityAdapter;
@@ -36,22 +35,7 @@ public class DesFragment extends BaseFragment {
     private ListView lv;
     private List<DesCity> list = new ArrayList<>();
     private List<DesRecommend> dlist;
-    private int i = 0;
-    private int lastId = -1;
-    private RecAdapter.IMyIdCallback callback = new RecAdapter.IMyIdCallback() {
-
-        @Override
-        public void getId(int id) {
-            i = id;
-        }
-    };
-    private Handler handler = new Handler() {
-
-        @Override
-        public void handleMessage(Message msg) {
-            super.handleMessage(msg);
-        }
-    };
+    private RecAdapter recAdapter;
 
 
     @Override
@@ -74,6 +58,7 @@ public class DesFragment extends BaseFragment {
 
     }
 
+
     @Override
     protected void initData() {
         final CityAdapter cityAdapter = new CityAdapter(getActivity(), list);
@@ -90,8 +75,7 @@ public class DesFragment extends BaseFragment {
                         LogUtil.w(data.toString());
                         dlist = DesRecommend.arrayDesRecommendFromData(data.toString());
                         LogUtil.w("List<DesRecommend> = " + dlist.size());
-                        RecAdapter recAdapter = new RecAdapter(dlist, getContext(), callback);
-
+                        recAdapter = new RecAdapter(dlist, getContext());
                         lv.setAdapter(recAdapter);
                     }
                 } catch (JSONException e) {
@@ -108,6 +92,15 @@ public class DesFragment extends BaseFragment {
 
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                TextView v = (TextView) view.findViewById(R.id.des_list_tv);
+                if (v == lastView) {
+                    return;
+                }
+                if (lastView != null) {
+                    lastView.setSelected(false);
+                }
+                lastView = v;
+                v.setSelected(true);
                 if (list != null)
                     list.clear();
                 DesRecommend desRecommend = dlist.get(position);
@@ -115,10 +108,11 @@ public class DesFragment extends BaseFragment {
                 list.addAll(destinations);
                 LogUtil.d("lv onItemClick  size == " + list.size());
                 cityAdapter.notifyDataSetChanged();
-                cityAdapter.setList(list);
             }
         });
 
 
     }
+
+    private TextView lastView;
 }

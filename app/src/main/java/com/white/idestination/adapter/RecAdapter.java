@@ -21,12 +21,6 @@ public class RecAdapter extends BaseAdapter {
 
     private Context dcontext = null;
 
-    private IMyIdCallback myIdCallback;
-
-    private int id;
-
-    private int lastIndex = -1;
-
 
     public List<DesRecommend> getDlist() {
         return dlist;
@@ -36,10 +30,9 @@ public class RecAdapter extends BaseAdapter {
         this.dlist = dlist;
     }
 
-    public RecAdapter(List<DesRecommend> list, Context context, IMyIdCallback listener) {
+    public RecAdapter(List<DesRecommend> list, Context context) {
         this.dlist = list;
         this.dcontext = context;
-        this.myIdCallback = listener;
     }
 
     public RecAdapter() {
@@ -52,10 +45,6 @@ public class RecAdapter extends BaseAdapter {
 
     @Override
     public Object getItem(int position) {
-        if (lastIndex != position)
-            id = 0;
-        myIdCallback.getId(id);
-        lastIndex = position;
         return dlist.get(position);
     }
 
@@ -77,18 +66,12 @@ public class RecAdapter extends BaseAdapter {
         }
         DesRecommend desRecommend = dlist.get(position);
         myHoler.tv_name.setText(desRecommend.getName());
+
         return convertView;
     }
 
-    class MyHoler {
+    public class MyHoler {
 
-        private TextView tv_name;
-    }
-
-    public interface IMyIdCallback {
-
-        void getId(int id);
-
-
+        public TextView tv_name;
     }
 }

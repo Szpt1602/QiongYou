@@ -11,6 +11,20 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="false">
+
+            <LinearLayout
+                android:id="@+id/des_city_rootll"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+            </LinearLayout>
+        </ScrollView>
+
         <TextView
             android:id="@+id/des_city_title_tv"
             android:layout_width="match_parent"
@@ -35,19 +49,6 @@
             android:layout_alignParentRight="true"
             android:layout_margin="10dp"
             android:background="@drawable/ic_search"/>
-
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <LinearLayout
-                android:id="@+id/des_city_rootll"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-            </LinearLayout>
-        </ScrollView>
     </RelativeLayout>
 
 </LinearLayout>

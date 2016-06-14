@@ -17,6 +17,7 @@
     <string name="local_visa_tv">输入签证国家或地区</string>
     <string name="local_visa_all">全部国家和地区</string>
     <string name="local_more">查看全部产品</string>
+    <string name="des_local_play">当地玩乐</string>
 
     <!--MyFragment-->
     <string name="fragment_my_login">点击登录,体验更多</string>

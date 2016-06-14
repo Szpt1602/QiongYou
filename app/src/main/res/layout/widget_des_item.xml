@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-              xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="140dp"
-              android:layout_height="100dp"
-              android:gravity="center"
-              android:orientation="horizontal">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="140dp"
+    android:layout_height="100dp"
+    android:gravity="center"
+    android:orientation="horizontal">
 
     <RelativeLayout
         android:id="@+id/des_item_rootrl"

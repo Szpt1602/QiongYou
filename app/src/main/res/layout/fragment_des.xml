@@ -52,11 +52,9 @@
         <ListView
             android:id="@+id/fragment_des_listview"
             android:layout_width="0dp"
+            android:background="#00000000"
             android:layout_height="match_parent"
-            android:layout_weight="1">
-
-
-        </ListView>
+            android:layout_weight="1"/>
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/des_content_rv"

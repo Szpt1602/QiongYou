@@ -25,6 +25,7 @@ public class Des_City_Name1 {
     private String enname;
     private List<LocalBlock> local_block;
     private List<PtypeBlock> ptype_block;
+    private List<PtypeBlock> city_block;
 
     public static Des_City_Name1 objectFromData(String str) {
 
@@ -74,6 +75,14 @@ public class Des_City_Name1 {
 
     public List<PtypeBlock> getPtype_block() {
         return ptype_block;
+    }
+
+    public List<PtypeBlock> getCity_block() {
+        return city_block;
+    }
+
+    public void setCity_block(List<PtypeBlock> city_block) {
+        this.city_block = city_block;
     }
 
     public void setPtype_block(List<PtypeBlock> ptype_block) {
