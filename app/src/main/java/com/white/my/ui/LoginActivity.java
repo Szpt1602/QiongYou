@@ -27,6 +27,7 @@ public class LoginActivity extends BaseActivity {
     private  List<View> list;
     private RadioGroup rg;
 
+
     @Override
     protected int getLayoutResId() {
         return R.layout.activity_login;
@@ -42,11 +43,13 @@ public class LoginActivity extends BaseActivity {
 
         back_iv.setOnClickListener(new View.OnClickListener() {
 
-            private Intent back;
 
             @Override
             public void onClick(View v) {
+//                Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+//                startActivity(intent);
                 LoginActivity.this.finish();
+//                finish();
             }
         });
         register.setOnClickListener(new View.OnClickListener() {
@@ -55,6 +58,7 @@ public class LoginActivity extends BaseActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
                 startActivity(intent);
+
             }
         });
         vp.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
@@ -97,6 +101,8 @@ public class LoginActivity extends BaseActivity {
                 }
             }
         });
+
+
     }
 
     @Override
@@ -105,6 +111,7 @@ public class LoginActivity extends BaseActivity {
         register = (TextView) findViewById(R.id.login_activity_register);
         login = (RadioButton) findViewById(R.id.login_activity_btn1);
         message_login = (RadioButton) findViewById(R.id.login_activity_btn2);
+
         rg = (RadioGroup) findViewById(R.id.login_activity_rg);
         vp = (ViewPager) findViewById(R.id.activity_login_vp);
         Fragment_login_login fragment_login_login = new Fragment_login_login(this);

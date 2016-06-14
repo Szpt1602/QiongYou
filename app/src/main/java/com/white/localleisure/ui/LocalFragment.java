@@ -2,6 +2,7 @@ package com.white.localleisure.ui;
 
 import android.support.v4.view.ViewPager;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -16,6 +17,8 @@ import com.white.localleisure.widget.LocalScrollItem;
 import com.white.other.base.BaseFragment;
 import com.white.other.utils.Constant;
 import com.white.other.utils.HttpUtil;
+import com.white.other.utils.JumpManager;
+import com.white.other.widget.ViewPagerIndex;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -27,7 +30,7 @@ import java.util.List;
 /**
  * Created by A8 on 2016/6/1.
  */
-public class LocalFragment extends BaseFragment {
+public class LocalFragment extends BaseFragment implements View.OnClickListener{
 
     private LinearLayout rootll;
     private String title;
@@ -49,6 +52,11 @@ public class LocalFragment extends BaseFragment {
     private ViewPager viewPager;
     private List<LocalScrollItem> list = new ArrayList<>();
     private List<View> views;
+    private ViewPagerIndex vpindex;
+    private Button btn_city;
+    private LinearLayout ll_01;
+    private LinearLayout ll_02;
+    private LinearLayout ll_03;
 
     @Override
     protected int getLayoutResId() {
@@ -68,13 +76,20 @@ public class LocalFragment extends BaseFragment {
         tv_subtitle = (TextView) root.findViewById(R.id.local_subtitle_tv);
         content_bg = (ImageView) root.findViewById(R.id.local_content_bg);
         viewPager = (ViewPager) root.findViewById(R.id.local_viewpager);
+        vpindex = (ViewPagerIndex) root.findViewById(R.id.local_item_index);
+        btn_city = (Button) root.findViewById(R.id.local_selector_city);
+        ll_01 = (LinearLayout) root.findViewById(R.id.local_ll_01);
+        ll_02 = (LinearLayout) root.findViewById(R.id.local_ll_02);
+        ll_03 = (LinearLayout) root.findViewById(R.id.local_ll_03);
+        btn_city.setOnClickListener(this);
+        ll_01.setOnClickListener(this);
+        ll_02.setOnClickListener(this);
+        ll_03.setOnClickListener(this);
     }
 
     @Override
     protected void initEvents() {
         HttpUtil.doGet(Constant.HOT, new HttpUtil.RequestCallback() {
-
-
             @Override
             public void success(Object result) {
                 try {
@@ -93,7 +108,6 @@ public class LocalFragment extends BaseFragment {
                     List<LocalItemJson> localItemJsons = new LocalItemJson().arrayLocalItemFromData(recommend_lastm.toString());
                     addlastm(localItemJsons);
                     setTop();
-
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -104,13 +118,11 @@ public class LocalFragment extends BaseFragment {
                 Toast.makeText(getActivity(), "请求失败", Toast.LENGTH_SHORT).show();
             }
         });
-
     }
 
 
     @Override
     protected void initData() {
-
     }
 
     private void addPtype(List<LocalItemJson> list) {
@@ -147,6 +159,24 @@ public class LocalFragment extends BaseFragment {
         viewPager.setPageMargin(50);
         MyPagerAdapter adapter = new MyPagerAdapter(list);
         viewPager.setAdapter(adapter);
+        vpindex.setViewPager(viewPager);
     }
 
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.local_selector_city:
+                JumpManager.jumpToCityActivity(getActivity());
+                break;
+            case R.id.local_ll_01:
+                Toast.makeText(getContext(),"01",Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.local_ll_02:
+                JumpManager.jumpToVisaActivity(getActivity());
+                break;
+            case R.id.local_ll_03:
+                Toast.makeText(getContext(),"03",Toast.LENGTH_SHORT).show();
+                break;
+        }
+    }
 }

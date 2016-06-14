@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.white.localleisure.ui.VisaActivity">
+
+    <LinearLayout
+        android:id="@+id/local_visa_rootll"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <android.support.v4.view.ViewPager
+                android:id="@+id/local_visa_vp"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"/>
+            <com.white.other.widget.ViewPagerIndex
+                app:pointPadding="5dp"
+                android:id="@+id/local_visa_vpi"
+                app:selectColor="@color/public_white"
+                android:layout_gravity="bottom|center_horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"/>
+        </FrameLayout>
+        <RelativeLayout
+            android:background="@color/public_tint_gray"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/local_visa_edll"
+                android:layout_margin="15dp"
+                android:padding="6dp"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="@drawable/shape_local_visa_tv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:drawableLeft="@drawable/ic_search_left"
+                    android:text="@string/local_visa_tv"
+                    android:textSize="15sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/local_visa_ll"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </LinearLayout>
+        <TextView
+            android:padding="10dp"
+            android:background="@drawable/shape_local_more"
+            android:text="@string/local_visa_all"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/public_green"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <View
+            android:layout_height="10dp"
+            android:layout_width="match_parent"
+            android:background="@color/public_tint_gray"/>
+
+
+        <LinearLayout
+            android:id="@+id/local_visa_ll2"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="特惠推荐"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:layout_margin="10dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <View
+                style="@style/fragment_my_transverse_line"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:padding="10dp"
+            android:background="@drawable/shape_local_more"
+            android:text="@string/local_more"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/public_green"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+
+
+</ScrollView>

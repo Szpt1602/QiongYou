@@ -2,9 +2,11 @@ package com.white.localleisure.widget;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.white.R;
@@ -41,11 +43,19 @@ public class LocalScrollItem extends LinearLayout {
 
 
     public void setLocalScrolljson(LocalItemJson json) {
+        final String t = json.getTitle();
         Glide.with(getContext()).load(json.getPic()).into(image);
-        title.setText(json.getTitle());
+        this.title.setText(json.getTitle());
         String prices = json.getPrice();
         String pri = prices.substring(4, prices.length() - 7);
         price.setText(pri);
         number.setText(json.getSale_count()+"件已售");
+        setOnClickListener(new OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getContext(),t+"",Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }

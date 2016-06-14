@@ -2,9 +2,11 @@ package com.white.localleisure.widget;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.white.R;
@@ -45,7 +47,8 @@ public class LocalItem extends RelativeLayout{
         imageview = (ImageView) findViewById(R.id.local_item_iv);
     }
 
-    public static void setLocalItem(LocalItemJson json,Context context){
+    public void setLocalItem(final LocalItemJson json, Context context){
+        final String name = json.getCity_name();
         tv_city.setText(json.getCity_name());
         tv_content.setText(json.getCate_short_name());
         tv_title.setText(json.getTitle());
@@ -54,7 +57,13 @@ public class LocalItem extends RelativeLayout{
         String pri = price.substring(4, price.length() - 7);
         tv_price.setText(pri);
         Glide.with(context).load(json.getPic()).thumbnail(0.1f).into(imageview);
+        setOnClickListener(new OnClickListener() {
 
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getContext(),name+"",Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
 

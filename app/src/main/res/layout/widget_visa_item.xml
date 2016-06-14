@@ -3,32 +3,32 @@
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
               android:orientation="vertical">
-
-
-
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp">
+        android:layout_margin="10dp">
 
 
         <ImageView
-            android:id="@+id/local_item_iv"
+            android:id="@+id/visa_item_iv"
             android:layout_width="110dp"
             android:layout_height="90dp"
             android:background="@color/public_tint_gray"
             android:scaleType="fitXY"/>
 
         <LinearLayout
-            android:id="@+id/local_item_top_ll"
+            android:id="@+id/visa_item_top_ll"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:layout_toRightOf="@id/local_item_iv"
+            android:layout_toRightOf="@id/visa_item_iv"
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/local_item_content"
+                android:id="@+id/visa_item_content"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="交通"
@@ -43,7 +43,7 @@
                 android:background="@color/public_tint_gray"/>
 
             <TextView
-                android:id="@+id/local_item_city"
+                android:id="@+id/visa_item_city"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:drawableLeft="@drawable/ic_poi_green"
@@ -53,48 +53,59 @@
         </LinearLayout>
 
         <TextView
-            android:id="@+id/local_item_title"
+            android:id="@+id/visa_item_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/local_item_top_ll"
+            android:layout_below="@id/visa_item_top_ll"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="10dp"
-            android:layout_toRightOf="@id/local_item_iv"
+            android:layout_toRightOf="@id/visa_item_iv"
             android:ellipsize="end"
             android:maxLines="2"
             android:text="全日本JR全日本JR全日本JR全日本JR全日本JR全日本JR全日本JR全日本JR全日本JR"
             android:textSize="15sp"/>
 
         <TextView
-            android:id="@+id/local_item_number"
+            android:id="@+id/visa_item_number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@id/local_item_iv"
+            android:layout_alignBottom="@id/visa_item_iv"
             android:layout_marginLeft="20dp"
-            android:layout_toRightOf="@id/local_item_iv"
+            android:layout_toRightOf="@id/visa_item_iv"
             android:text="10000件已售"
             android:textColor="@color/public_gray"/>
 
         <TextView
-            android:id="@+id/local_other_tv"
+            android:id="@+id/visa_other_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@id/local_item_iv"
+            android:layout_alignBottom="@id/visa_item_iv"
             android:layout_alignParentRight="true"
             android:text="元起"
             android:textColor="@color/public_gray"/>
 
         <TextView
-            android:id="@+id/local_item_price"
+            android:id="@+id/visa_item_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@id/local_other_tv"
-            android:layout_toLeftOf="@id/local_other_tv"
+            android:layout_alignBottom="@id/visa_other_tv"
+            android:layout_toLeftOf="@id/visa_other_tv"
             android:text="228"
             android:textColor="@color/local_red"
             android:textSize="23sp"/>
     </RelativeLayout>
 
+        <TextView
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="20dp"
+            android:id="@+id/visa_item_top_tv"
+            android:textColor="@color/public_white"
+            android:text="下单立减20元"
+            android:textSize="10sp"
+            android:background="@drawable/bg_visa_top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </FrameLayout>
     <View
         android:layout_margin="10dp"
         style="@style/fragment_my_transverse_line"

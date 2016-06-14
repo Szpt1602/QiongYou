@@ -5,28 +5,30 @@
                 android:layout_height="match_parent"
                 android:id="@+id/login_messsage_login"
                 android:layout_below="@id/login_activity_rg"
-       tools:showIn="@layout/activity_login">
+                tools:showIn="@layout/activity_login"
+       >
 
-    <ImageView
-        android:id="@+id/login_activity_while_iv"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:background="@drawable/ic_arrow_white"
-        android:layout_below="@id/login_activity_rg"
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableRight="@drawable/ic_arrow_white"
         android:layout_marginTop="50dp"
-        android:layout_marginLeft="60dp"/>
-
+        android:layout_marginLeft="50dp"
+        android:textSize="20sp"
+        android:textColor="#Fff"
+        android:id="@+id/login_activity_tvcon_message"/>
     <EditText
         android:id="@+id/login_activity_wirte_phone_et"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/login_activity_write_phone"
-        android:layout_toRightOf="@id/login_activity_while_iv"
+        android:layout_toRightOf="@id/login_activity_tvcon_message"
         android:layout_marginTop="50dp"
         android:textColorHint="#fff"
         android:layout_marginLeft="10dp"
         android:background="@null"
         android:layout_below="@id/login_activity_rg"/>
+
 
     <View
         android:id="@+id/login_activity_view3"
@@ -37,6 +39,7 @@
         android:layout_marginTop="10dp"/>
 
     <Button
+        android:id="@+id/fragment_login_message_btn"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:background="@drawable/login_activity_loginbtn_bg"

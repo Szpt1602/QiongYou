@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
               android:layout_height="match_parent">
     <ImageView
         android:id="@+id/local_scroll_image"
+        android:scaleType="fitXY"
         android:layout_gravity="center_horizontal"
         android:layout_width="match_parent"
-        android:layout_height="150dp"/>
+        android:layout_height="130dp"/>
     <LinearLayout
-        android:layout_marginTop="-10dp"
+        android:layout_below="@id/local_scroll_image"
+        android:layout_marginTop="-5dp"
         android:layout_gravity="center_horizontal"
         android:orientation="vertical"
         android:background="@drawable/shape_local_scroll_item"
@@ -43,7 +44,6 @@
                 android:layout_toLeftOf="@id/local_scroll_money"
                 android:textSize="20sp"
                 android:textColor="@color/local_red"
-                android:layout_alignBottom="@id/local_scroll_money"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
             <TextView
@@ -57,4 +57,4 @@
         </RelativeLayout>
 
     </LinearLayout>
-</LinearLayout>
+</RelativeLayout>

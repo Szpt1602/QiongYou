@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -16,8 +17,9 @@
             <ImageView
                 android:id="@+id/local_content_bg"
                 android:layout_width="match_parent"
-                android:scaleType="fitXY"
-                android:layout_height="match_parent"/>
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"/>
+
             <TextView
                 android:id="@+id/local_title_tv"
                 android:layout_width="wrap_content"
@@ -71,6 +73,7 @@
                 android:orientation="horizontal">
 
                 <LinearLayout
+                    android:id="@+id/local_ll_01"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -87,12 +90,13 @@
                         android:id="@+id/local_must_iv1"
                         android:layout_width="60dp"
                         android:layout_height="60dp"
-                        android:layout_margin="10dp"
                         android:layout_gravity="center_horizontal"
+                        android:layout_margin="10dp"
                         />
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/local_ll_02"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -107,13 +111,14 @@
 
                     <ImageView
                         android:id="@+id/local_must_iv2"
-                        android:layout_gravity="center_horizontal"
                         android:layout_width="60dp"
                         android:layout_height="60dp"
+                        android:layout_gravity="center_horizontal"
                         android:layout_margin="10dp"/>
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/local_ll_03"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -128,57 +133,67 @@
 
                     <ImageView
                         android:id="@+id/local_must_iv3"
-                        android:layout_gravity="center_horizontal"
                         android:layout_width="60dp"
                         android:layout_height="60dp"
+                        android:layout_gravity="center_horizontal"
                         android:layout_margin="10dp"/>
                 </LinearLayout>
 
 
             </LinearLayout>
         </LinearLayout>
+
         <View
-            android:background="@color/public_tint_gray"
             android:layout_width="match_parent"
-            android:layout_height="10dp"/>
+            android:layout_height="10dp"
+            android:background="@color/public_tint_gray"/>
 
         <LinearLayout
-            android:orientation="vertical"
-            android:clipChildren="false"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:clipChildren="false"
+            android:orientation="vertical">
+
             <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_margin="10dp"
                 android:gravity="center"
-                android:textSize="20sp"
-                android:textStyle="bold"
                 android:text="@string/local_city_hot"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+
             <TextView
-                android:gravity="center"
-                android:textSize="12sp"
-                android:layout_marginBottom="20sp"
-                android:text="最世界独家出品，摆脱千篇一律，探索属于你的世界"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
+                android:layout_height="match_parent"
+                android:layout_marginBottom="20sp"
+                android:gravity="center"
+                android:text="最世界独家出品，摆脱千篇一律，探索属于你的世界"
+                android:textSize="12sp"/>
 
-           <android.support.v4.view.ViewPager
-               android:id="@+id/local_viewpager"
-               android:layout_marginLeft="80dp"
-               android:clipChildren="false"
-               android:layout_marginRight="80dp"
-               android:layout_width="match_parent"
-               android:layout_height="220dp">
-
-           </android.support.v4.view.ViewPager>
-
-
+            <android.support.v4.view.ViewPager
+                android:id="@+id/local_viewpager"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginLeft="80dp"
+                android:layout_marginRight="80dp"
+                android:clipChildren="false">
+            </android.support.v4.view.ViewPager>
+            <com.white.other.widget.ViewPagerIndex
+                android:id="@+id/local_item_index"
+                android:layout_width="100dp"
+                android:layout_height="20dp"
+                app:pointPadding="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_gravity="center_horizontal"
+                app:selectColor="@color/public_green"/>
         </LinearLayout>
+
         <View
-            android:background="@color/public_tint_gray"
             android:layout_width="match_parent"
-            android:layout_height="10dp"/>
+            android:layout_height="10dp"
+            android:background="@color/public_tint_gray"/>
+
         <LinearLayout
             android:id="@+id/local_list_ll"
             android:layout_width="match_parent"
@@ -200,6 +215,17 @@
                 android:background="@color/public_tint_gray"/>
 
         </LinearLayout>
+
+        <TextView
+            android:text="@string/local_more"
+            android:textSize="15sp"
+            android:gravity="center"
+            android:textColor="@color/public_green"
+            android:background="@drawable/shape_local_more"
+            android:layout_margin="20dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="130dp"
+            android:layout_height="40dp"/>
 
     </LinearLayout>
 </ScrollView>

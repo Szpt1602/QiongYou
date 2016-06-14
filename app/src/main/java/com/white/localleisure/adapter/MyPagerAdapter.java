@@ -16,6 +16,7 @@ public class MyPagerAdapter extends PagerAdapter {
     private List<LocalScrollItem> views;
 
     public MyPagerAdapter(List<LocalScrollItem> views) {
+
         this.views=views;
     }
 
