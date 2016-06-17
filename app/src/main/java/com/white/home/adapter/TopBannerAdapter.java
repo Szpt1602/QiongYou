@@ -8,6 +8,7 @@ import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.white.home.bean.HomeDetail;
+import com.white.other.utils.JumpManager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,16 +20,16 @@ public class TopBannerAdapter extends PagerAdapter {
 
     private final List<ImageView> views;
 
-    public TopBannerAdapter(Fragment fragment, List<HomeDetail> list) {
+    public TopBannerAdapter(final Fragment fragment, List<HomeDetail> list) {
         views = new ArrayList<>();
-        for (HomeDetail hd : list) {
+        for (final HomeDetail hd : list) {
             ImageView imageView = new ImageView(fragment.getActivity());
             imageView.setScaleType(ImageView.ScaleType.FIT_XY);
             imageView.setOnClickListener(new View.OnClickListener() {
 
                 @Override
                 public void onClick(View v) {
-
+                    JumpManager.jumpToWebNormalActivity(fragment.getActivity(), hd.getUrl());
                 }
             });
             Glide.with(fragment)

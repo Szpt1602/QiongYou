@@ -1,4 +1,4 @@
-package com.white.other.ui.activity;
+package com.white.other.ui.fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 import com.white.R;
+import com.white.other.ui.activity.HomeActivity;
 
 /**
  * Created by Exp on 2016/6/6.

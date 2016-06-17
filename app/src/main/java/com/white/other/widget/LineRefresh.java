@@ -12,21 +12,20 @@ import android.view.View;
  */
 public class LineRefresh extends View {
 
-    private float width;
-    private float height;
+    private int width;
+    private int height;
     private float centerX;
     private Paint mPaint;
     private Paint wPaint;
-    private float lineWidth = 200;
+    private float lineWidth;
     private float endX;
     private float fromX;
     private boolean refresh;
 
-    private float w1FromX;
-    private float w2FromX;
-
     public LineRefresh(Context context) {
         super(context);
+
+        initPaint();
     }
 
     public LineRefresh(Context context, AttributeSet attrs) {
@@ -38,7 +37,7 @@ public class LineRefresh extends View {
     private void initPaint() {
         mPaint = new Paint();
         mPaint.setStyle(Paint.Style.FILL);
-        mPaint.setColor(Color.GREEN);
+        mPaint.setColor(Color.parseColor("#41BA8F"));
         mPaint.setStrokeWidth(25);
 
         wPaint = new Paint();
@@ -57,40 +56,29 @@ public class LineRefresh extends View {
     protected void onDraw(final Canvas canvas) {
         super.onDraw(canvas);
 
-        if (refresh) {
+        if (!refresh) {
             centerX = width / 2;
             fromX = centerX - lineWidth;
             endX = centerX + lineWidth;
             canvas.drawLine(fromX, 0, endX, 0, mPaint);
         } else {
             canvas.drawLine(0, 0, width, 0, mPaint);
-
-            canvas.drawLine(w1FromX, 0, w1FromX - height, 0, wPaint);
-            canvas.drawLine(w2FromX, 0, w2FromX + height, 0, wPaint);
-
-            postDelayed(new Runnable() {
-
-                @Override
-                public void run() {
-                    canvas.drawLine(w1FromX, 0, w1FromX - height, 0, wPaint);
-                    canvas.drawLine(w2FromX, 0, w2FromX + height, 0, wPaint);
-                }
-            }, 200);
         }
 
     }
 
     public void setLineWidth(float width) {
         lineWidth = width;
-        refresh = false;
+        if (width > this.width / 2) {
+            refresh = true;
+        } else {
+            refresh = false;
+        }
         invalidate();
     }
 
-    public void setRefreshX(float w1FromX, float w2FromX) {
-        refresh = true;
-        this.w1FromX = w1FromX;
-        this.w2FromX = w2FromX;
-        invalidate();
+    public float getLineWidth() {
+        return lineWidth;
     }
 
 

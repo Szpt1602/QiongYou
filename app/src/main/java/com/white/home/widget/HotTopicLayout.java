@@ -35,6 +35,7 @@ public class HotTopicLayout extends LinearLayout {
     }
 
     public void setData(List<HomeDetail> list) {
+        root.removeAllViews();
         for (HomeDetail h : list) {
             root.addView(new HotTopicItem(getContext(), h));
         }

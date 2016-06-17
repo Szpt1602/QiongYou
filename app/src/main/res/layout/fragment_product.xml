@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.white.other.widget.LineRefreshLayout
+        android:id="@+id/product_fragment_lrl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/product_fragment_selector">
+
+        <ListView
+            android:id="@+id/product_fragment_lv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </com.white.other.widget.LineRefreshLayout>
+
+    <LinearLayout
+        android:id="@+id/product_fragment_selector"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_height"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/product_sel_rb1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <RadioButton
+                style="@style/product_fragment_rb"
+                android:checked="true"
+                android:text="自由行"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/product_sel_rb2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <RadioButton
+                style="@style/product_fragment_rb"
+                android:text="目的地"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/product_sel_rb3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <RadioButton
+                style="@style/product_fragment_rb"
+                android:text="筛选"/>
+        </RelativeLayout>
+
+        <View
+            style="@style/single_vertical_line_divider"/>
+
+        <TextView
+            android:layout_width="60dp"
+            android:drawablePadding="-5dp"
+            android:paddingTop="9dp"
+            android:text="排序"
+            android:textSize="13sp"
+            android:gravity="center"
+            android:drawableTop="@drawable/ic_sequence"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+
+    <View
+        android:layout_alignBottom="@+id/product_fragment_selector"
+        style="@style/single_horizontal_line_divider"/>
+
+</RelativeLayout>

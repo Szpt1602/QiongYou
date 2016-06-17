@@ -7,6 +7,7 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -24,6 +25,7 @@ import com.white.home.widget.HotTopicLayout;
 import com.white.home.widget.PromoLayout;
 import com.white.other.base.BaseFragment;
 import com.white.other.utils.HttpUtil;
+import com.white.other.utils.JumpManager;
 import com.white.other.widget.LoadingMore;
 import com.white.other.widget.MyScrollView;
 import com.white.other.widget.ViewPagerIndex;
@@ -116,6 +118,14 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
                 int measuredBannerHeight = vp_banner.getMeasuredHeight();
                 int measuredTitleHeight = getTitleView().getMeasuredHeight();
                 titleBg.setAlpha((float) y / (measuredBannerHeight - measuredTitleHeight));
+            }
+        });
+
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                JumpManager.jumpToWebBuyActivity(getActivity(), itemAdapter.getData().get(position).getUrl());
             }
         });
 
@@ -229,4 +239,5 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
         super.onAttach(context);
 
     }
+
 }

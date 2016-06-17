@@ -1,9 +1,8 @@
 package com.white.home.adapter;
 
 import android.graphics.Color;
-import android.os.Handler;
+import android.graphics.drawable.BitmapDrawable;
 import android.support.v4.app.Fragment;
-import android.text.Html;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +14,8 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.white.R;
 import com.white.home.bean.Choiceness;
+import com.white.other.utils.HttpUtil;
+import com.white.other.utils.ImageUtil;
 
 import java.util.List;
 
@@ -26,7 +27,6 @@ public class HomeItemAdapter extends BaseAdapter {
     private final LayoutInflater inflater;
     private final Fragment fragment;
     private List<Choiceness> list;
-    private Handler mHandler = new Handler();
 
     public HomeItemAdapter(Fragment fragment) {
         this.fragment = fragment;
@@ -48,27 +48,34 @@ public class HomeItemAdapter extends BaseAdapter {
         return position;
     }
 
-    ViewHolder holder;
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
+        final ViewHolder holder;
+
         if (convertView == null) {
+            holder = new ViewHolder();
             convertView = inflater.inflate(R.layout.adapter_home_item, null);
-            holder = new ViewHolder(convertView);
+            holder.iv = (ImageView) convertView.findViewById(R.id.adapter_home_iv);
+            holder.price = (TextView) convertView.findViewById(R.id.adapter_home_price);
+            holder.leftTag = (TextView) convertView.findViewById(R.id.adapter_home_sale_tag);
+            holder.content = (TextView) convertView.findViewById(R.id.adapter_home_tv_content);
+            holder.sell = (TextView) convertView.findViewById(R.id.adapter_home_tv_sell);
+            holder.rightTag = (TextView) convertView.findViewById(R.id.adapter_home_right_tag);
+
+            convertView.setTag(holder);
+        } else {
+            holder = (ViewHolder) convertView.getTag();
         }
 
         Choiceness choiceness = getItem(position);
 
         Glide.with(fragment)
                 .load(choiceness.getPic())
+                .centerCrop()
                 .into(holder.iv);
 
-        Glide.with(fragment)
-                .load(choiceness.getPtype_icon())
-                .into(holder.smallIv);
-
-        holder.price.setText(Html.fromHtml(choiceness.getPrice().substring(0, choiceness.getPrice().lastIndexOf(">"))));
-        holder.price.append("元起");
+        holder.price.setText(choiceness.getPrice().substring(4, choiceness.getPrice().lastIndexOf("<")));
         if (!TextUtils.isEmpty(choiceness.getTag_txt())) {
             holder.leftTag.setText(choiceness.getTag_txt());
             holder.leftTag.setVisibility(View.VISIBLE);
@@ -79,16 +86,32 @@ public class HomeItemAdapter extends BaseAdapter {
             holder.sell.setTextColor(Color.parseColor("#50000000"));
             holder.sell.setText(choiceness.getSale_count() + "件已售出");
         } else {
-            holder.sell.setTextColor(Color.parseColor("#f9014f"));
+            holder.sell.setTextColor(Color.parseColor("#ff7467"));
             holder.sell.setText("新品上架");
         }
         holder.rightTag.setText(choiceness.getCate_short_name());
+
+        choiceness.getPtype_icon();
+
+        ImageUtil.setTextDrawableForUrl(choiceness.getPtype_icon(),
+                new HttpUtil.RequestCallback() {
+
+                    @Override
+                    public void success(Object result) {
+                        holder.rightTag.setCompoundDrawables((BitmapDrawable) result, null, null, null);
+                    }
+
+                    @Override
+                    public void fail() {
+
+                    }
+                });
+
         return convertView;
     }
 
     class ViewHolder {
 
-        ImageView smallIv;
         ImageView iv;
         TextView price;
         TextView leftTag;
@@ -96,15 +119,6 @@ public class HomeItemAdapter extends BaseAdapter {
         TextView sell;
         TextView rightTag;
 
-        public ViewHolder(View view) {
-            smallIv = (ImageView) view.findViewById(R.id.adapter_home_right_tag_iv);
-            iv = (ImageView) view.findViewById(R.id.adapter_home_iv);
-            price = (TextView) view.findViewById(R.id.adapter_home_price);
-            leftTag = (TextView) view.findViewById(R.id.adapter_home_sale_tag);
-            content = (TextView) view.findViewById(R.id.adapter_home_tv_content);
-            sell = (TextView) view.findViewById(R.id.adapter_home_tv_sell);
-            rightTag = (TextView) view.findViewById(R.id.adapter_home_right_tag);
-        }
     }
 
     public void addData(List<Choiceness> list) {
@@ -115,4 +129,9 @@ public class HomeItemAdapter extends BaseAdapter {
         }
         notifyDataSetChanged();
     }
+
+    public List<Choiceness> getData() {
+        return list;
+    }
+
 }

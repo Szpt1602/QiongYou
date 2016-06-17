@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 import com.white.R;
 import com.white.home.bean.HomeDetail;
+import com.white.other.utils.JumpManager;
 
 import java.util.List;
 
@@ -46,14 +47,32 @@ public class GearAdapter extends RecyclerView.Adapter<GearAdapter.GearViewHolder
     }
 
     @Override
-    public void onBindViewHolder(GearViewHolder holder, int position) {
+    public void onBindViewHolder(final GearViewHolder holder, final int position) {
         Glide.with(fragment)
                 .load(list.get(position).getCover())
                 .into(holder.iv);
+
+        holder.iv.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                HomeDetail homeDetail = list.get(position);
+                if (homeDetail.getName().equals("签证")) {
+
+                    return;
+                }
+                switch (homeDetail.getOpen_type()) {
+                    case "1":
+                        JumpManager.jumpToProductActivity(fragment.getActivity(), homeDetail.getName(), 1);
+                        break;
+                }
+            }
+        });
     }
 
     @Override
     public int getItemCount() {
         return list == null ? 0 : list.size();
     }
+
 }

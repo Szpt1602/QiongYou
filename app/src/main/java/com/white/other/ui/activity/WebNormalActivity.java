@@ -1,6 +1,7 @@
 package com.white.other.ui.activity;
 
 import android.annotation.SuppressLint;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -10,33 +11,35 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.white.R;
 
 /**
  * 浏览器页面
- * <p/>
+ * <p>
  * Created by Liu Jianping
  *
  * @date : 16/5/25.
  */
-public class WebActivity extends AppCompatActivity {
+public class WebNormalActivity extends AppCompatActivity {
 
     private WebView webView;
 
-    private ProgressBar progressBar;
+    private ImageView loading;
 
     private ImageView ivBack, ivShare;
 
     private TextView tvTitle;
+    private String url;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_web);
+        setContentView(R.layout.activity_webnormal);
+
+        url = getIntent().getStringExtra("url");
 
         initViews();
 
@@ -67,9 +70,9 @@ public class WebActivity extends AppCompatActivity {
 
         @Override
         public void onProgressChanged(WebView view, int newProgress) {
-            progressBar.setProgress(newProgress);
             if (newProgress == 100) {
-                progressBar.setVisibility(View.INVISIBLE);
+                ((AnimationDrawable) (loading.getDrawable())).stop();
+                loading.setVisibility(View.GONE);
             }
         }
 
@@ -81,13 +84,15 @@ public class WebActivity extends AppCompatActivity {
     };
 
     private void initData() {
-
+        webView.loadUrl(url);
         webView.loadUrl("javascript:wave()");//java代码直接调用js代码
+
+        ((AnimationDrawable) (loading.getDrawable())).start();
     }
 
     private void initViews() {
         webView = (WebView) findViewById(R.id.web_content);
-        progressBar = (ProgressBar) findViewById(R.id.web_pb);
+        loading = (ImageView) findViewById(R.id.web_load);
         ivBack = (ImageView) findViewById(R.id.web_back_iv);
         ivShare = (ImageView) findViewById(R.id.web_share_iv);
         tvTitle = (TextView) findViewById(R.id.web_title_tv);

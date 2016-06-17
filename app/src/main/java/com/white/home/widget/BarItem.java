@@ -10,6 +10,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.white.R;
 import com.white.home.bean.HomeDetail;
+import com.white.other.utils.JumpManager;
 
 import java.util.List;
 
@@ -64,13 +65,32 @@ public class BarItem extends LinearLayout {
 
     public void setData(List<HomeDetail> list) {
         for (int i = 0; i < list.size(); i++) {
-            HomeDetail homeDetail = list.get(i);
+            final HomeDetail homeDetail = list.get(i);
             Glide.with(getContext())
                     .load(homeDetail.getIcon())
                     .crossFade()
                     .into(imageViews[i]);
             textViews[i].setText(homeDetail.getName());
+
+            setOnClickListener(new OnClickListener() {
+
+                @Override
+                public void onClick(View v) {
+                    switch (homeDetail.getOpen_type()) {
+                        case "3":
+
+                            break;
+                        case "6":
+                            JumpManager.jumpToProductActivity(getContext(), homeDetail.getName(), 6);
+                            break;
+                        case "2":
+                            JumpManager.jumpToWebNormalActivity(getContext(), homeDetail.getUrl());
+                            break;
+                    }
+                }
+            });
         }
 
     }
+
 }

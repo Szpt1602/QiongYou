@@ -13,7 +13,6 @@
             android:id="@+id/title_home_green"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:alpha="0"
             android:background="@drawable/bg_green_change"/>
 
         <RelativeLayout
@@ -65,17 +64,16 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <ProgressBar
-            android:id="@+id/web_pb"
-            style="@android:style/Widget.ProgressBar.Horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:progressDrawable="@drawable/layer_progress_bar"/>
-
         <WebView
             android:id="@+id/web_content"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
+
+        <ImageView
+            android:id="@+id/web_load"
+            android:layout_width="match_parent"
+            android:src="@drawable/bg_loading"
+            android:layout_height="2dp"/>
 
     </FrameLayout>
 </LinearLayout>

@@ -1,6 +1,9 @@
 package com.white.other.utils;
 
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
+import android.os.AsyncTask;
 
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.display.CircleBitmapDisplayer;
@@ -11,6 +14,23 @@ import com.nostra13.universalimageloader.core.display.RoundedBitmapDisplayer;
  * Created by Administrator on 2016/5/19.
  */
 public class ImageUtil {
+
+    public static void setTextDrawableForUrl(final String url, final HttpUtil.RequestCallback callback) {
+        new AsyncTask<Void, Void, byte[]>() {
+
+            @Override
+            protected byte[] doInBackground(Void... params) {
+                return HttpUtil.getBytes(url);
+            }
+
+            @Override
+            protected void onPostExecute(byte[] bytes) {
+                Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
+                BitmapDrawable drawable = new BitmapDrawable(bitmap);
+                callback.success(drawable);
+            }
+        }.execute();
+    }
 
     public static DisplayImageOptions getNormalImageOptions() {
         DisplayImageOptions options = new DisplayImageOptions.Builder()

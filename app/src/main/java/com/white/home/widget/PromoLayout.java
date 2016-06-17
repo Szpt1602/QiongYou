@@ -2,12 +2,14 @@ package com.white.home.widget;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.bumptech.glide.Glide;
 import com.white.R;
 import com.white.home.bean.HomeDetail;
+import com.white.other.utils.JumpManager;
 
 import java.util.List;
 
@@ -20,6 +22,8 @@ public class PromoLayout extends LinearLayout {
     private ImageView rt;
     private ImageView bl;
     private ImageView br;
+
+    private ImageView[] views;
 
     public PromoLayout(Context context, List<HomeDetail> list) {
         super(context);
@@ -40,23 +44,28 @@ public class PromoLayout extends LinearLayout {
         rt = (ImageView) findViewById(R.id.promo_right_top);
         bl = (ImageView) findViewById(R.id.promo_bottom_left);
         br = (ImageView) findViewById(R.id.promo_bottom_right);
+
+        views = new ImageView[]{l, rt, bl, br};
     }
 
     private void setData(List<HomeDetail> list) {
-        Glide.with(getContext())
-                .load(list.get(0).getImg())
-                .into(l);
 
-        Glide.with(getContext())
-                .load(list.get(1).getImg())
-                .into(rt);
+        for (int i = 0; i < list.size(); i++) {
+            Glide.with(getContext())
+                    .load(list.get(i).getImg())
+                    .into(views[i]);
+            setListener(views[i], list.get(i).getUrl());
+        }
 
-        Glide.with(getContext())
-                .load(list.get(2).getImg())
-                .into(bl);
+    }
 
-        Glide.with(getContext())
-                .load(list.get(3).getImg())
-                .into(br);
+    private void setListener(View v, final String url) {
+        v.setOnClickListener(new OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                JumpManager.jumpToWebNormalActivity(getContext(), url);
+            }
+        });
     }
 }

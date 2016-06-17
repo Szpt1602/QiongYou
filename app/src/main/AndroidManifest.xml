@@ -43,6 +43,12 @@
 
         <activity android:name=".my.ui.RegisterActivity"/>
 
+        <activity android:name=".other.ui.activity.WebBuyActivity"/>
+
+        <activity android:name=".other.ui.activity.WebNormalActivity"/>
+
+        <activity android:name=".other.ui.activity.ProductActivity"/>
+
     </application>
 
 </manifest>

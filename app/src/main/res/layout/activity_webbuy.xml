@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent">
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.white.other.widget.ScrollListenWebView
+            android:id="@+id/web_buy_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <ProgressBar
+            android:id="@+id/web_buy_load"
+            style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:max="100"
+            android:progressDrawable="@drawable/layer_progress_bar"/>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_height"
+        android:background="@drawable/shape_gradient_black">
+
+        <FrameLayout
+            android:id="@+id/web_buy_title_home_green"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0"
+            android:background="@drawable/bg_green_change"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/title_height">
+
+            <ImageView
+                android:id="@+id/product_back_iv"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_centerVertical="true"
+                android:background="@drawable/selector_bg_click_cover"
+                android:clickable="true"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_back"/>
+
+            <ImageView
+                android:id="@+id/web_buy_share_iv"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/selector_bg_click_cover"
+                android:clickable="true"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_share_selector"/>
+
+            <TextView
+                android:id="@+id/web_buy_title_tv"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:ellipsize="marquee"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:gravity="center"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:scrollHorizontally="true"
+                android:singleLine="true"
+                android:textSize="20sp"/>
+
+        </RelativeLayout>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_height"
+        android:layout_gravity="bottom"
+        android:background="@color/hint_black">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2">
+
+                <TextView
+                    android:id="@+id/web_ask"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:drawableLeft="@drawable/ic_deal_collect"
+                    android:drawablePadding="5dp"
+                    android:text="@string/ask"
+                    android:textColor="@color/public_white"/>
+
+                <TextView
+                    android:id="@+id/web_starred"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:layout_toRightOf="@id/web_ask"
+                    android:drawableLeft="@drawable/ic_deal_consulation"
+                    android:drawablePadding="5dp"
+                    android:text="@string/starred"
+                    android:textColor="@color/public_white"/>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/web_reserve"
+                android:layout_width="0dp"
+                android:clickable="true"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:background="@drawable/web_red_selector"
+                android:gravity="center"
+                android:text="@string/reserve"
+                android:textColor="@color/public_white"
+                android:textSize="18sp"/>
+        </LinearLayout>
+
+    </FrameLayout>
+
+</FrameLayout>

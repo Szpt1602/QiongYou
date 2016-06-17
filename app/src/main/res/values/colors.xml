@@ -12,8 +12,10 @@
     <color name="text_white">#bbffffff</color>
     <color name="home_index_point">#40000000</color>
     <color name="public_white">#ffffff</color>
-    <color name="local_red">#f9014f</color>
+    <color name="local_red">#FF7467</color>
     <color name="none_color">#00000000</color>
+    <color name="web_hint_red">#d15a4f</color>
+    <color name="item_white">#F7F4F2</color>
 
     <!--国家-->
     <drawable name="smssdk_dialog_btn_nor">#00000000</drawable>

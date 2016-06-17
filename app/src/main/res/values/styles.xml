@@ -17,10 +17,16 @@
         <item name="android:layout_height">match_parent</item>
     </style>
 
-    <style name="single_line_divider">
+    <style name="single_horizontal_line_divider">
         <item name="android:background">@color/public_tint_gray</item>
         <item name="android:layout_width">fill_parent</item>
-        <item name="android:layout_height">1.0px</item>
+        <item name="android:layout_height">1px</item>
+    </style>
+
+    <style name="single_vertical_line_divider">
+        <item name="android:background">@color/public_tint_gray</item>
+        <item name="android:layout_width">1px</item>
+        <item name="android:layout_height">match_parent</item>
     </style>
 
     <style name="btn_press_bg">
@@ -71,6 +77,18 @@
         <item name="android:background">@color/public_tint_gray</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">10.0dp</item>
+    </style>
+
+    <style name="product_fragment_rb">
+        <item name="android:textColor">@color/home_rb_text_selector</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:button">@null</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:drawablePadding">5dp</item>
+        <item name="android:drawableRight">@drawable/product_arrow_selector</item>
+        <item name="android:layout_height">match_parent</item>
     </style>
 
 </resources>

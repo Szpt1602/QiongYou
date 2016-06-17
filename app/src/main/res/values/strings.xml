@@ -6,6 +6,7 @@
     <string name="home_des">目的地</string>
     <string name="home_loc_play">当地玩乐</string>
     <string name="home_my">我的</string>
+    <string name="home_item_price_text">元起</string>
     <string name="search_home_hint">搜索目的地/折扣/关键字</string>
     <string name="home_hot_topic_title">当季热门</string>
     <string name="home_guess">猜你喜欢</string>
@@ -47,4 +48,12 @@
     <string name="local_hot">热卖商品</string>
     <string name="local_city_hot">城市深度游</string>
     <string name="home_gear">出行必备</string>
+
+    <!--WebActivity-->
+    <string name="ask">咨询</string>
+    <string name="starred">收藏</string>
+    <string name="reserve">立即预定</string>
+    <string name="product_title_search">按关键字搜索</string>
+
+
 </resources>
